@@ -1,0 +1,152 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alliance University - Campus Life App</title>
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <h2>ALLIANCE UNIVERSITY - CAMPUS LIFE APP</h2>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li>
+                        <details>
+                            <summary>More <i class="fas fa-chevron-down"></i></summary>
+                            <ul>
+                                <li><a href="#">Buy Books</a></li>
+                                <li><a href="#">Sell Books</a></li>
+                                <li><a href="#">Exam Prep</a></li>
+                                <li><a href="#">Interview Prep</a></li>
+                                <li><a href="#">Events</a></li>
+                            </ul>
+                        </details>
+                    </li>                                      
+                    <li><a href="{% url 'logout' %}">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <img src= "https://i.ibb.co/XQs6g03/2-A619809-E322-4-A97-8094-550-A4478-EC1-B.png" alt="Alliance University Campus">
+        <div class="hero-content">
+            <h1 style="font-size: 5vw; font-weight: bold; color: white;">
+                Explore. Connect. Thrive.
+                <h2>Welcome to the Alliance University Student Hub</h2>
+                <p>Your University, Your Digital World</p>
+            </h1>            
+        </div>
+    </section>
+<section class="section-2">
+    <div class="container">
+        <div class="text-content">
+            <h3>Enhance Your Campus Experience </h3>
+            <p>The <strong>Alliance University - Campus Life App</strong> transforms student experiences in Bengaluru by providing a dedicated platform for collaboration and engagement. Exclusively for Alliance University students, this app requires university credentials for access. It features an internal marketplace for buying and selling books, resources for exam preparation, and guidance for interviews. Engage with fellow students through discussions and event postings while easily navigating through our dynamic sidebar that presents relevant content at your fingertips.</p>
+            <a href="#" class="btn">Explore More</a>
+            
+        </div>
+        <div class="image-content">
+            <img src="https://i.ibb.co/m5ZPH0BG/sec-2.jpg" alt="Campus Life">
+        </div>
+    </div>
+</section>
+<!-- Section 3: Campus Life Essentials -->
+<section class="campus-life-essentials">
+    <div class="container">
+        <h3 class="section-tagline">CAMPUS LIFE ESSENTIALS</h3>
+        <br>
+    
+
+        <div class="cards">
+            <!-- Internal Marketplace -->
+            <div class="card">
+                <img src="https://i.ibb.co/NgRrbz3d/library.webp" alt="Internal Marketplace">
+                <div class="card-content">
+                    <h4 class="card-title">Internal marketplace &rsaquo;</h4>
+                    <p>A dedicated platform for buying and selling books among students.</p>
+                </div>
+            </div>
+
+            <!-- Exam Preparation Assistance -->
+            <div class="card">
+                <img src="https://i.ibb.co/xtCnKb9J/exam.webp" alt="Exam Preparation Assistance">
+                <div class="card-content">
+                    <h4 class="card-title">Exam preparation assistance &rsaquo;</h4>
+                    <p>Get tailored resources to excel in your exams.</p>
+                </div>
+            </div>
+
+            <!-- Interview Preparation Guidance -->
+            <div class="card">
+                <img src="https://i.ibb.co/RTRXPSR6/interview.webp" alt="Interview Preparation Guidance">
+                <div class="card-content">
+                    <h4 class="card-title">Interview preparation guidance &rsaquo;</h4>
+                    <p>Master your interview skills with expert guidance.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Section: Campus Buzz -->
+<section class="campus-buzz">
+    <div class="container">
+      <h2 class="section-tagline">CAMPUS BUZZ-Stay connected with the latest happenings</h2>
+     
+
+        <div class="buzz-cards">
+            <!-- Event Cards -->
+            <div class="buzz-card" onclick="openModal(0)">
+                <img src="https://i.ibb.co/6cryq1nJ/book-fair.jpg" alt="Book Exchange Fair">
+                <h4>Book Exchange Fair</h4>
+                <p> 21 March 2025 at 10:30 am </p>
+                <p>Swap books and discover new reads at the Book Exchange Fair!</p>
+                <button class="learn-more-btn">Learn More</button>
+            </div>
+
+            <div class="buzz-card" onclick="openModal(1)">
+                <img src="https://i.ibb.co/84B29hd5/inter.jpg" alt="Interview Preparation Workshop">
+                <h4>Interview Preparation Workshop</h4>
+                <p> 02 April 2025 at 10:30 am </p>
+                <p>Ace your interviews with expert guidance and mock sessions.</p>
+                <button class="learn-more-btn">Learn More</button>
+            </div>
+
+            <div class="buzz-card" onclick="openModal(2)">
+                <img src="https://i.ibb.co/B5qKtRFJ/portal.jpg" alt="Student Portal Launch">
+                <h4>Student Portal Launch</h4>
+                <p> 26 April 2025 at 10:30 am </p>
+                <p>Connect, discuss, and engage on the new student portal.</p>
+                <button class="learn-more-btn">Learn More</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Modal Popup -->
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div class="modal-body">
+            <img id="modal-img" src="" alt="Event Image">
+            <div class="modal-text">
+                <h4 id="modal-title"></h4>
+                <p id="modal-description"></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <script src="{% static 'js/script.js' %}" ></script>
+
+</body>
+</html>

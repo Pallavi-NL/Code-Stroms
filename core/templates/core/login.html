@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Student Life Platform</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+
+    <div class="login-container">
+        <h2>Welcome Back!</h2>
+        <h3>Alliance University campus</h3>
+        <br>
+        <p class="subtitle">Log in to continue</p>
+
+        <!-- Show messages -->
+        {% for message in messages %}
+            <p class="error-message">{{ message }}</p>
+        {% endfor %}
+
+        <form method="POST">
+            {% csrf_token %}
+            <div class="input-group">
+                <input type="text" name="username" placeholder="Username" required>
+            </div>
+            <div class="input-group">
+                <input type="password" name="password" placeholder="Password" required>
+            </div>
+            <!-- Remember Me Checkbox -->
+            <div class="remember-me">
+                <input type="checkbox" name="remember_me" id="remember_me">
+                <label for="remember_me">Remember Me</label>
+            </div>
+            <button type="submit" class="btn">Login</button>
+        </form>
+
+        <p class="register-link">Don't have an account? <a href="{% url 'register' %}">Register here</a></p>
+    </div>
+
+</body>
+</html>
